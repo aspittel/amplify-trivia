@@ -13,7 +13,7 @@ function CreateQuestion() {
   const [answer2, setAnswer2] = useState("");
   const [answer3, setAnswer3] = useState("");
 
-  const shuffleArray = (arr: (string | null)[]) => {
+  const shuffleArray = (arr: (string)[]) => {
     for (var i = arr.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = arr[i];
@@ -25,7 +25,7 @@ function CreateQuestion() {
 
   const createQuestion = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    let answers: (string | null)[] = shuffleArray([
+    let answers: (string)[] = shuffleArray([
       answer1,
       answer2,
       answer3,
