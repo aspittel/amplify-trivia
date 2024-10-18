@@ -4,8 +4,9 @@ const schema = a.schema({
   Question: a.model({
     text: a.string().required(),
     answers: a.string().required().array(),
-    correctAnswer: a.string().required(),
-  }).authorization([a.allow.owner(), a.allow.public().to(['read'])])
+    correctAnswer: a.string().required()
+  })
+  .authorization(allow => [allow.publicApiKey(), allow.owner()])
 });
 
 export type Schema = ClientSchema<typeof schema>;

@@ -17,7 +17,7 @@ export default function Home() {
 
   async function listQuestions() {
     // fetch all questions
-    const { data } = await client.models.Question.list();
+    const { data, errors } = await client.models.Question.list();
 
     setQuestions(data);
   }
